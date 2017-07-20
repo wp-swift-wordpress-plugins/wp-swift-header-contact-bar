@@ -25,11 +25,17 @@ if (function_exists('get_field')) {
 	    $email = get_field('email', 'option');
 	}
 }
+$show_google_map = false;
+if (get_field('map', 'option')) { 
+	$show_google_map = true;
+}
 ?>
 <div class="header-links black-bar" id="header-links">
-	<div class="not-row"><!-- 
-	     --><a href="#" id="show-map-button" class="close-map active effect"><i class="fa fa-map-marker"></i> Find Our Location</a><!-- 
-		 --><a href="tel:<?php echo $phone; ?>" class="effect"><i class="fa fa-volume-control-phone"></i> Call Today! <?php echo $phone_readable; ?></a><!-- 
+	<div class="not-row"><?php 
+		if ($show_google_map): ?><!-- 
+		     --><a href="#" id="show-map-button" class="close-map active effect"><i class="fa fa-map-marker"></i> Find Our Location</a><!-- 
+			 --><?php 
+		endif ?><a href="tel:<?php echo $phone; ?>" class="effect"><i class="fa fa-volume-control-phone"></i> Call Today! <?php echo $phone_readable; ?></a><!-- 
 		 --><a href="mailto:<?php echo $email ?>" class="effect"><i class="fa fa-envelope-o"></i> <?php echo $email ?></a>
 		<?php //include 'template-parts/_social-media-links.php'; ?>
 
@@ -58,9 +64,14 @@ if (function_exists('get_field')) {
 		</div>
 
 	</div>
-	<div id="close-map-wrapper" class="close-map hide"><i class="fa fa-window-close" id="close-map-button"></i></div>
+	<?php if ($show_google_map): ?>
+		<div id="close-map-wrapper" class="close-map hide"><i class="fa fa-window-close" id="close-map-button"></i></div>	
+	<?php endif ?>
+
 </div>
-<div id="google-map" class="hide" >
-	<?php if (function_exists('get_google_map')) { echo get_google_map( $attributes=array('class'=>'acf-map-hidden')); } // Render the Google Map ?>
-</div>
+<?php if ($show_google_map): ?>
+	<div id="google-map" class="hide" >
+		<?php if (function_exists('get_google_map')) { echo get_google_map( $attributes=array('class'=>'acf-map-hidden')); } // Render the Google Map ?>
+	</div>
+<?php endif ?>
 
