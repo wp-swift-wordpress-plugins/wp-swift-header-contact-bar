@@ -13,9 +13,9 @@
  * @package           Header_Contact_Bar
  *
  * @wordpress-plugin
- * Plugin Name:       HeaderContactBar
+ * Plugin Name:       WP Swift: Header Contact Bar
  * Plugin URI:        https://github.com/GarySwift/header-contact-bar
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Adds a bar with contact details and google map.
  * Version:           1.0.0
  * Author:            Gary Swift
  * Author URI:        https://github.com/GarySwift
