@@ -39,7 +39,7 @@ if (get_field('map', 'option')) {
 		 --><a href="mailto:<?php echo $email ?>" class="effect"><i class="fa fa-envelope-o"></i> <?php echo $email ?></a>
 		<?php //include 'template-parts/_social-media-links.php'; ?>
 
-		<div class="float-right">
+		<div class="social-media-wrapper">
 			<?php if (function_exists('get_social_media')): ?>
 				<?php $social_media_links = get_social_media(); ?>
 

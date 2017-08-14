@@ -1,0 +1,262 @@
+/* @start WP Swift: Header Contact Bar */
+/* @start header-contact-bar  */
+header.site-header {
+  clear: both; }
+
+.black-bar {
+  background-color: #4f4f4f;
+  color: #fefefe;
+  height: 1.8rem;
+  /* Sweep To Top */ }
+  .black-bar a {
+    color: #fefefe;
+    padding: 0 11px;
+    background-color: #4f4f4f;
+    display: inline-block;
+    border-right: 1px solid rgba(254, 254, 254, 0.3);
+    cursor: pointer;
+    cursor: hand;
+    font-size: 0.9rem;
+    height: 1.8rem;
+    line-height: 1.8rem; }
+  .black-bar .social-media-wrapper {
+    float: right; }
+  .black-bar .social {
+    border-left: 1px solid rgba(254, 254, 254, 0.3); }
+    .black-bar .social a.icon-link {
+      padding: 0 8px; }
+    .black-bar .social a.icon-link:last-child {
+      border-right: none; }
+  .black-bar .brightlight {
+    font-weight: bold; }
+    .black-bar .brightlight span.bright {
+      color: #BEBF01; }
+    .black-bar .brightlight span.light {
+      color: #fefefe; }
+  .black-bar a.effect {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s; }
+  .black-bar a.effect:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fefefe;
+    -webkit-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+        transform: scaleY(0);
+    -webkit-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out; }
+  .black-bar a.effect.facebook:before {
+    background: #3b5998; }
+  .black-bar a.effect.twitter:before {
+    background: #00aced; }
+  .black-bar a.effect.youtube:before {
+    background: #bb0000; }
+  .black-bar a.effect.linkedin:before {
+    background: #007bb6; }
+  .black-bar a.effect.google:before {
+    background: #dd4b39; }
+  .black-bar a.effect:hover, .black-bar a.effect:focus, .black-bar a.effect:active {
+    color: #4f4f4f; }
+  .black-bar a.effect.facebook:hover, .black-bar a.effect.facebook:focus, .black-bar a.effect.facebook:active, .black-bar a.effect.twitter:hover, .black-bar a.effect.twitter:focus, .black-bar a.effect.twitter:active, .black-bar a.effect.youtube:hover, .black-bar a.effect.youtube:focus, .black-bar a.effect.youtube:active, .black-bar a.effect.linkedin:hover, .black-bar a.effect.linkedin:focus, .black-bar a.effect.linkedin:active, .black-bar a.effect.google:hover, .black-bar a.effect.google:focus, .black-bar a.effect.google:active {
+    color: #fefefe; }
+  .black-bar a.hvr-sweep-to-right.brightlight:hover span.light, .black-bar a.hvr-sweep-to-right.brightlight:focus span.light, .black-bar a.hvr-sweep-to-right.brightlight:active span.light {
+    color: #4f4f4f; }
+  .black-bar a.effect:hover:before, .black-bar a.effect:focus:before, .black-bar a.effect:active:before {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+        transform: scaleY(1); }
+
+#header-links, #footer-links {
+  display: none; }
+  #header-links a.icon-link, #footer-links a.icon-link {
+    font-size: 1.3rem; }
+
+@media print, screen and (min-width: 64em) {
+  #header-links, #footer-links {
+    display: block; } }
+
+#google-map {
+  height: 400px;
+  width: 100%;
+  background-color: #C5C5C5;
+  position: relative; }
+
+#google-map.hidden {
+  height: 400px;
+  position: absolute;
+  left: -100%; }
+
+#close-map-wrapper i {
+  color: #4f4f4f;
+  font-size: 3rem;
+  line-height: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 40px;
+  top: 60px;
+  border-radius: 4px;
+  z-index: 10000; }
+
+#close-map-wrapper i:hover {
+  background-color: #767676; }
+
+/* @end header-contact-bar */
+/* @end bright-contact-bar */
+span.brightlight {
+  position: relative;
+  padding: 3px 15px;
+  z-index: 10; }
+  span.brightlight span.bright {
+    color: #BEBF01; }
+  span.brightlight span.light {
+    color: #fefefe; }
+
+#brightlight-buffer {
+  display: none;
+  background-color: #4f4f4f; }
+
+@media screen and (min-width: 64em) {
+  #brightlight-buffer {
+    display: block; } }
+
+#brightlight-contact {
+  float: right;
+  opacity: 0;
+  transition: opacity 0.3s; }
+  #brightlight-contact a {
+    padding: 3px 15px;
+    color: #fefefe; }
+  #brightlight-contact span.info {
+    font-size: small;
+    display: inline-block;
+    color: #fefefe; }
+
+#brightlight-buffer:hover #brightlight-contact {
+  opacity: 1; }
+
+#brightlight-wrapper {
+  display: block;
+  position: relative;
+  margin-right: 600px; }
+  #brightlight-wrapper #brightlight-tagline {
+    color: #fefefe;
+    padding-top: 7px;
+    padding-left: 20px;
+    font-size: small;
+    position: absolute;
+    opacity: 0;
+    transition-duration: 0.3s;
+    /* Safari */
+    transition-delay: 0;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+        transform: translateX(-100%); }
+
+#brightlight-wrapper:hover #brightlight-tagline {
+  opacity: 1;
+  -ms-transform: translateX(0);
+      transform: translateX(0);
+  -webkit-transform: translateX(0); }
+
+#brightlight-wrapper:hover span.bright {
+  color: #fefefe; }
+
+#brightlight-wrapper:hover span.light {
+  color: #4f4f4f; }
+
+/* Sweep To Right */
+#brightlight-wrapper .hvr-effect {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s; }
+
+#brightlight-wrapper .hvr-effect:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #BEBF01;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+      transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  -ms-transform-origin: 0 50%;
+      transform-origin: 0 50%;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out; }
+
+#brightlight-wrapper:hover .hvr-effect:before, #brightlight-wrapper:focus .hvr-effect:before, #brightlight-wrapper:active .hvr-effect:before {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+      transform: scaleX(1); }
+
+/* Sweep To Top */
+#brightlight-contact .hvr-sweep-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s; }
+
+#brightlight-contact .hvr-sweep-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #BEBF01;
+  -webkit-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+      transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out; }
+
+#brightlight-contact .hvr-sweep-to-top:hover, #brightlight-contact .hvr-sweep-to-top:focus, #brightlight-contact .hvr-sweep-to-top:active {
+  color: #4f4f4f !important; }
+
+#brightlight-contact .hvr-sweep-to-top:hover:before, #brightlight-contact .hvr-sweep-to-top:focus:before, #brightlight-contact .hvr-sweep-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+      transform: scaleY(1); }
+
+/* @end footer-contact-bar */
+/* @end WP Swift: Header Contact Bar */

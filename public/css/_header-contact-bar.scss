@@ -1,8 +1,12 @@
-/* @start header-contact-bar */
-$button-color: $black;
+/* @start header-contact-bar  */
+$brightlight-black: #4f4f4f;// #242424;
+$button-color: $brightlight-black;
 $button-secondary-color: $secondary-color;
+header.site-header {
+    clear: both;//Float fix
+}
 .black-bar {
-    $background-color: $black;
+    $background-color: $brightlight-black;
     $height: 1.8rem;
     background-color: $background-color;
   color: $white;
@@ -18,7 +22,10 @@ $button-secondary-color: $secondary-color;
     font-size: 0.9rem;
 
     height: $height;
-    line-height: 2.1rem;
+    line-height: 1.8rem;
+  }
+  .social-media-wrapper {
+    float: right;
   }
   .social {
     border-left: 1px solid rgba($white, 0.3);
@@ -84,10 +91,13 @@ $button-secondary-color: $secondary-color;
   a.effect.linkedin:before {
     background: $linkedin;
   }
+  a.effect.google:before {
+    background: $google-plus;
+  }  
   a.effect:hover, a.effect:focus, a.effect:active {
     color: $background-color;
   }
-  a.effect.facebook:hover, a.effect.facebook:focus, a.effect.facebook:active, a.effect.twitter:hover, a.effect.twitter:focus, a.effect.twitter:active, a.effect.youtube:hover, a.effect.youtube:focus, a.effect.youtube:active, , a.effect.linkedin:hover, a.effect.linkedin:focus, a.effect.linkedin:active {
+  a.effect.facebook:hover, a.effect.facebook:focus, a.effect.facebook:active, a.effect.twitter:hover, a.effect.twitter:focus, a.effect.twitter:active, a.effect.youtube:hover, a.effect.youtube:focus, a.effect.youtube:active, , a.effect.linkedin:hover, a.effect.linkedin:focus, a.effect.linkedin:active, a.effect.google:hover, a.effect.google:focus, a.effect.google:active {
     color: $white;
   }
   a.hvr-sweep-to-right.brightlight:hover, a.hvr-sweep-to-right.brightlight:focus, a.hvr-sweep-to-right.brightlight:active {

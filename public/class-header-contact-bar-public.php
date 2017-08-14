@@ -53,6 +53,7 @@ class Header_Contact_Bar_Public {
 		$this->version = $version;
 		// add_action( 'wp_enqueue_scripts', array($this, 'enqueue_styles') );
 		add_action( 'foundationpress_layout_start', array($this, 'foundationpress_layout_start_content')  );
+		add_action( 'foundationpress_layout_end', array($this, 'foundationpress_layout_end_content')  );
 
 	}
 
@@ -75,8 +76,10 @@ class Header_Contact_Bar_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/header-contact-bar-public.css', array(), $this->version, 'all' );
-
+		$options = get_option( 'wp_swift_contact_bars_settings' );
+		if (!isset($options['wp_swift_contact_bars_checkbox_disable_public_css'])) {
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/contact-bar-public.css', array(), $this->version, 'all' );
+		}
 	}
 
 	/**
@@ -108,6 +111,21 @@ class Header_Contact_Bar_Public {
 	 * @since    1.0.0
 	 */
 	public function foundationpress_layout_start_content() {
-		require_once plugin_dir_path( __FILE__ ) . 'partials/header-contact-bar-public-display.php';
+		$options = get_option( 'wp_swift_contact_bars_settings' );
+		if (!isset($options['wp_swift_contact_bars_checkbox_disable_header'])) {
+			require_once plugin_dir_path( __FILE__ ) . 'partials/header-contact-bar-public-display.php';
+		}
 	}
+
+	/**
+	 * Load in the html for the footer bar
+	 *
+	 * @since    1.0.0
+	 */
+	public function foundationpress_layout_end_content() {
+		$options = get_option( 'wp_swift_contact_bars_settings' );
+		if (!isset($options['wp_swift_contact_bars_checkbox_disable_footer'])) {
+			require_once plugin_dir_path( __FILE__ ) . 'partials/footer-contact-bar-public-display.php';
+		}
+	}	
 }

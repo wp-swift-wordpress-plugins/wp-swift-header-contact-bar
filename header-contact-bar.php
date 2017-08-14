@@ -58,6 +58,19 @@ register_deactivation_hook( __FILE__, 'deactivate_header_contact_bar' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-header-contact-bar.php';
 
 /**
+ * The Admin menu settings.
+ *
+ * @author 	 Gary Swift 
+ * @since    1.0.0
+ */
+function wp_swift_header_contact_bar_admin_menu() {
+	if( current_user_can('editor') || current_user_can('administrator') ) {
+		require plugin_dir_path( __FILE__ ) . '_admin-menu.php';
+	}
+}
+add_action( 'init', 'wp_swift_header_contact_bar_admin_menu' );
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,

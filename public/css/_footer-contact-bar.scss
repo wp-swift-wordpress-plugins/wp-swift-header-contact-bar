@@ -1,0 +1,175 @@
+$static-background-color: $brightlight-black;
+$hover-background-color: $white;
+$button-hover-background-color: $secondary-color;
+$bright-color: #BEBF01;
+/* @end bright-contact-bar */
+span.brightlight {
+    position: relative;
+    padding: 3px 15px;
+    z-index: 10;
+    span.bright {
+        color: $bright-color;
+    }
+    span.light {
+        color: $white;
+    }  
+}
+#brightlight-buffer {
+    display: none;
+    background-color: $static-background-color;
+
+}
+@media screen and #{breakpoint(large)} {
+  #brightlight-buffer {
+      display: block;
+  }  
+}
+#brightlight-contact {
+    float: right;
+    opacity: 0; 
+    transition: opacity 0.3s;  
+    a {
+        padding: 3px 15px;
+        color: $hover-background-color;
+    }
+    span.info {
+        font-size: small;
+        display: inline-block;
+         color: $hover-background-color;
+    }
+}
+#brightlight-buffer:hover {
+    #brightlight-contact {
+        opacity: 1;   
+    }
+}
+#brightlight-wrapper {
+    display: block;
+    position: relative;
+    margin-right: 600px;
+    #brightlight-tagline {
+        color: $white;
+        padding-top: 7px;
+        padding-left: 20px;
+        font-size: small;
+        position: absolute;
+        $transition-duration: 0.3s;
+        $transition-delay: 0;
+        $translate: translateX(-100%);
+        opacity: 0;
+        -webkit-transition-duration: $transition-duration;
+        transition-duration: $transition-duration;
+        -webkit-transition-delay: $transition-delay; /* Safari */
+        transition-delay: $transition-delay;
+        -webkit-transform: $translate;
+        transform: $translate;
+        // transition: opacity 0.2s;
+    }    
+}
+#brightlight-wrapper:hover {
+    #brightlight-tagline {
+        opacity: 1;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    } 
+        span.bright {
+        color: $white;
+    }
+    span.light {
+        color: $static-background-color;
+    }  
+}
+
+/* Sweep To Right */
+#brightlight-wrapper {
+    .hvr-effect {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        position: relative;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+    .hvr-effect:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $bright-color;//#e7e7e7;// $hover-background-color;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    .hvr-effect:hover, .hvr-effect:focus, .hvr-effect:active {
+        // color: white;  
+    }
+}
+#brightlight-wrapper:hover .hvr-effect:before, #brightlight-wrapper:focus .hvr-effect:before, #brightlight-wrapper:active .hvr-effect:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+#brightlight-wrapper:hover span.hvr-effect.brightlight, #brightlight-wrapper:focus span.hvr-effect.brightlight, #brightlight-wrapper:active span.hvr-effect.brightlight {
+    // span.light {color: #242424}
+}
+
+
+
+/* Sweep To Top */
+#brightlight-contact {
+    .hvr-sweep-to-top {
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px transparent;
+      position: relative;
+      -webkit-transition-property: color;
+      transition-property: color;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+    }
+    .hvr-sweep-to-top:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $bright-color;// $hover-background-color;;
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+    .hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {
+      color: $static-background-color !important;  
+    }
+    .hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+    }
+}
+/* @end footer-contact-bar */
+
+/* @end WP Swift: Header Contact Bar */
