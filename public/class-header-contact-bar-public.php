@@ -129,3 +129,31 @@ class Header_Contact_Bar_Public {
 		}
 	}	
 }
+
+
+function wp_swift_contact_bars_social_media(  ) { 
+
+?><div class="social-media-wrapper">
+	<?php if (function_exists('get_social_media')): ?>
+		<?php $social_media_links = get_social_media(); ?>
+
+		<?php if ( is_array($social_media_links) && count($social_media_links) ) : ?>		     
+		   		<div class="social"><?php 
+		   		foreach ($social_media_links as $key => $link): 
+					if (isset($link['image']['url'])): 
+						?><a href="<?php echo $link['link']; ?>" class="<?php echo $link['slug']; ?>" target="_blank">
+			        		<img src="<?php echo $link['image']['url']; ?>" alt="">
+			        		<span class="hide">Social Media Link <?php echo $link['name']; ?></span>
+			        	</a><?php 
+			        	else: ?><a href="<?php echo $link['link']; ?>" class="effect hvr-sweep-to-top icon-link <?php echo $link['slug']; ?>" target="_blank">
+			        		<i class="fa <?php echo $link['icon'].' '. $link['slug']; ?>" aria-hidden="true"></i>
+			        		<span class="hide">Social Media Link <?php echo $link['name']; ?></span>
+			        	</a><?php 
+					endif;
+		        endforeach ?>
+		        </div>
+		<?php endif; ?>	
+
+	<?php endif ?>
+</div><?php 
+}

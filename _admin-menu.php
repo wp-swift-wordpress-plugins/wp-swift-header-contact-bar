@@ -2,7 +2,6 @@
 add_action( 'admin_menu', 'wp_swift_contact_bars_add_admin_menu' );
 add_action( 'admin_init', 'wp_swift_contact_bars_settings_init' );
 
-
 function wp_swift_contact_bars_add_admin_menu(  ) { 
 
 	if (function_exists('wp_swift_get_parent_slug')) {
@@ -47,6 +46,14 @@ function wp_swift_contact_bars_settings_init(  ) {
 		'header_contact_bar', 
 		'wp_swift_contact_bars_header_contact_bar_section' 
 	);
+
+	add_settings_field( 
+		'wp_swift_contact_bars_select_footer_links', 
+		__( 'Footer Links', 'wp-swift-contact-bars' ), 
+		'wp_swift_contact_bars_select_footer_links_render', 
+		'header_contact_bar', 
+		'wp_swift_contact_bars_header_contact_bar_section' 
+	);	
 }
 
 function wp_swift_contact_bars_checkbox_disable_public_css_render( ) { 
@@ -85,6 +92,17 @@ function wp_swift_contact_bars_checkbox_disable_footer_render( ) {
 	<?php
 }
 
+function wp_swift_contact_bars_select_footer_links_render( ) { 
+
+	$options = get_option( 'wp_swift_contact_bars_settings' );
+	?>
+	<select name='wp_swift_contact_bars_settings[wp_swift_contact_bars_select_footer_links]'>
+		<option value='0' <?php is_select_set( 'wp_swift_contact_bars_select_footer_links', $options, 0 ); ?>></option>
+		<option value='1' <?php is_select_set( 'wp_swift_contact_bars_select_footer_links', $options, 1 ); ?>>BrightLight Contact</option>
+		<option value='2' <?php is_select_set( 'wp_swift_contact_bars_select_footer_links', $options, 2 ); ?>>Social Media</option>
+	</select>
+<?php
+}
 
 function wp_swift_contact_bars_settings_section_callback(  ) { 
 
@@ -93,6 +111,9 @@ function wp_swift_contact_bars_settings_section_callback(  ) {
 }
 
 function wp_swift_contact_bars_options_page(  ) { 
+
+	// $options = get_option( 'wp_swift_contact_bars_settings' );
+
 ?><div id="wp-swift-contact-bars-options-page" class="wrap">
 	<form action='options.php' method='post'>
 
@@ -107,4 +128,12 @@ function wp_swift_contact_bars_options_page(  ) {
 
 	</form>
 </div><?php
+}
+
+if (!function_exists('is_select_set')) {
+	function is_select_set($name, $options, $value) {
+	    if (isset($options[$name]) && $options[$name] == $value) {
+	        echo 'selected';
+	    }
+	}
 }
