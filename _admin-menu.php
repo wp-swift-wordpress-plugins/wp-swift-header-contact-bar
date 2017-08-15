@@ -93,10 +93,7 @@ function wp_swift_contact_bars_settings_section_callback(  ) {
 }
 
 function wp_swift_contact_bars_options_page(  ) { 
-	$options = get_option( 'wp_swift_contact_bars_settings' );
-	echo "<pre>"; var_dump($options); echo "</pre>";
-	?>
-	<div id="wp-swift-contact-bars-options-page" class="wrap">
+?><div id="wp-swift-contact-bars-options-page" class="wrap">
 	<form action='options.php' method='post'>
 
 		<h1>WP Swift: Contact Bars</h1>
@@ -109,7 +106,5 @@ function wp_swift_contact_bars_options_page(  ) {
 		?>
 
 	</form>
-	</div>
-	<?php
-
+</div><?php
 }
